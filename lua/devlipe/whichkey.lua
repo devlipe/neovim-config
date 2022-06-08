@@ -95,7 +95,7 @@ local mappings = {
     "Find files",
   },
   ["F"] = { "<cmd>Telescope live_grep<cr>", "Find Text" },
-  ["W"] = { "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > '')})<CR>", "Search Word" },
+  ["W"] = { "<cmd>lua require('telescope.builtin').grep_string({ search = vim.fn.input('Grep For > ')})<CR>", "Search Word" },
   ["P"] = { "<cmd>lua require('telescope').extensions.projects.projects()<cr>", "Projects" },
 
   p = {
