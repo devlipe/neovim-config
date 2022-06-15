@@ -25,9 +25,10 @@ local check_backspace = function()
     return col == 0 or vim.fn.getline("."):sub(col, col):match "%s"
 end
 
+-- TabNine Configuration to work with CMP
 tabnine:setup({
     max_lines = 1000,
-    max_num_results = 20,
+    max_num_results = 0,
     sort = true,
     run_on_every_keystroke = true,
     snippet_placeholder = '..',
@@ -37,6 +38,12 @@ tabnine:setup({
     },
     show_prediction_strength = true
 })
+
+-- GitHub copilot to work with CMP
+vim.g.copilot_no_tab_map = true
+vim.g.copilot_assume_mapped = true
+vim.g.copilot_tab_fallback = ""
+
 
 -- --   פּ ﯟ   some other good icons
 -- local kind_icons = {
@@ -106,6 +113,7 @@ cmp.setup {
             select = true
         },
         ["<Tab>"] = cmp.mapping(function(fallback)
+            local copilot_keys = vim.fn['copilot#Accept']()
             if cmp.visible() then
                 cmp.confirm({
                     select = true
@@ -114,6 +122,8 @@ cmp.setup {
                 luasnip.expand()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
+            elseif copilot_keys ~= '' and type(copilot_keys) == 'string' then
+                vim.api.nvim_feedkeys(copilot_keys, 'i', true)
             elseif check_backspace() then
                 fallback()
             else
@@ -145,9 +155,12 @@ cmp.setup {
             return vim_item
         end
     },
-    sources = {{
-        name = 'cmp_tabnine'
-    }, {
+    sources = {
+        --- Uncomment with you like to have tabnine auto completion
+    --     {
+    --     name = 'cmp_tabnine'
+    -- },
+     {
         name = "nvim_lsp"
     }, {
         name = "luasnip"
