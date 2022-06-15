@@ -4,7 +4,7 @@ local options = {
   hidden = true,
   errorbells = false,
   softtabstop = 4,
-  undodir = '~/.nvim/undodir',
+  -- undodir = '$XDG_DATA_HOME/.nvim/undodir',
   incsearch = true,
   colorcolumn = "80",
   --signcolumn = "yes",
@@ -33,7 +33,7 @@ local options = {
   expandtab = true,                        -- convert tabs to spaces
   shiftwidth = 4,                          -- the number of spaces inserted for each indentation
   tabstop = 4,                             -- insert 4 spaces for a tab
-  --cursorline = true,                       -- highlight the current line
+  cursorline = true,                       -- highlight the current line
   number = true,                           -- set numbered lines
   relativenumber = true,                  -- set relative numbered lines
   numberwidth = 4,                         -- set number column width to 2 {default 4}
@@ -51,6 +51,7 @@ for k, v in pairs(options) do
   vim.opt[k] = v
 end
 
+vim.cmd "set path+=**"
 vim.cmd "set wildmode=longest,list,full"
 vim.cmd "set wildmenu"
 vim.cmd "set wildignore+=*.pyc"
