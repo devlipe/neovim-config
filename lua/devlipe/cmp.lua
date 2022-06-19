@@ -39,11 +39,10 @@ tabnine:setup({
     show_prediction_strength = true
 })
 
--- GitHub copilot to work with CMP
-vim.g.copilot_no_tab_map = true
-vim.g.copilot_assume_mapped = true
-vim.g.copilot_tab_fallback = ""
-
+-- -- GitHub copilot to work with CMP
+-- vim.g.copilot_no_tab_map = true
+-- vim.g.copilot_assume_mapped = true
+-- vim.g.copilot_tab_fallback = ""
 
 -- --   פּ ﯟ   some other good icons
 -- local kind_icons = {
@@ -96,9 +95,9 @@ cmp.setup {
         ["<C-j>"] = cmp.mapping.select_next_item(),
         ["<Up>"] = cmp.mapping.select_prev_item(),
         ["<Down>"] = cmp.mapping.select_next_item(),
-        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), {"i", "c"}),
-        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), {"i", "c"}),
-        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), {"i", "c"}),
+        ["<C-b>"] = cmp.mapping(cmp.mapping.scroll_docs(-1), { "i", "c" }),
+        ["<C-f>"] = cmp.mapping(cmp.mapping.scroll_docs(1), { "i", "c" }),
+        ["<C-Space>"] = cmp.mapping(cmp.mapping.complete(), { "i", "c" }),
         ["<C-y>"] = cmp.config.disable, -- Specify `cmp.config.disable` if you want to remove the default `<C-y>` mapping.
         ["<C-e>"] = cmp.mapping {
             i = cmp.mapping.abort(),
@@ -122,14 +121,14 @@ cmp.setup {
                 luasnip.expand()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-            -- elseif copilot_keys ~= '' and type(copilot_keys) == 'string' then
-            --     vim.api.nvim_feedkeys(copilot_keys, 'i', true)
+                -- elseif copilot_keys ~= '' and type(copilot_keys) == 'string' then
+                --     vim.api.nvim_feedkeys(copilot_keys, 'i', true)
             elseif check_backspace() then
                 fallback()
             else
                 fallback()
             end
-        end, {"i", "s"})
+        end, { "i", "s" })
         -- ["<S-Tab>"] = cmp.mapping(function(fallback)
         --     if cmp.visible() then
         --         cmp.select_prev_item()
@@ -141,7 +140,7 @@ cmp.setup {
         -- end, {"i", "s"})
     },
     formatting = {
-        fields = {"kind", "abbr", "menu"},
+        fields = { "kind", "abbr", "menu" },
         format = function(entry, vim_item)
             vim_item.kind = lspkind.presets.default[vim_item.kind]
             local menu = source_mapping[entry.source.name]
@@ -156,26 +155,24 @@ cmp.setup {
         end
     },
     sources = {
-        --- Uncomment with you like to have tabnine auto completion
-    --     {
-    --     name = 'cmp_tabnine'
-    -- },
-     {
-        name = "nvim_lsp"
-    }, {
-        name = "luasnip"
-    }, {
-        name = "buffer"
-    }, {
-        name = "path"
-    }},
+        {
+            name = 'cmp_tabnine'
+        }, {
+            name = "nvim_lsp"
+        }, {
+            name = "luasnip"
+        }, {
+            name = "buffer"
+        }, {
+            name = "path"
+        } },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false
     },
     window = {
         documentation = {
-            border = {"╭", "─", "╮", "│", "╯", "─", "╰", "│"}
+            border = { "╭", "─", "╮", "│", "╯", "─", "╰", "│" }
         }
     },
     experimental = {

@@ -10,7 +10,7 @@ vim.g.copilot_no_tab_map = true
 vim.g.copilot_assume_mapped = true
 vim.g.copilot_tab_fallback = ""
 
-
-local opts = { expr = true, silent = true }
-local keymap = vim.api.nvim_set_keymap
-keymap("i", "<Right>", "copilot#Accept(“<CR>”)", opts)
+vim.cmd('imap <silent><script><expr> <C-y> copilot#Accept("<CR>")')
+-- local opts = { noremap = false, expr = true, silent = true }
+-- local keymap = vim.api.nvim_set_keymap
+-- keymap('i', '<C-Tab>', 'copilot#Accept("/<CR>")', opts)
