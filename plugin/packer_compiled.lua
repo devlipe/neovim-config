@@ -159,6 +159,11 @@ _G.packer_plugins = {
     path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
   },
+  nvim = {
+    loaded = true,
+    path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/nvim",
+    url = "https://github.com/catppuccin/nvim"
+  },
   ["nvim-autopairs"] = {
     loaded = true,
     path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/nvim-autopairs",

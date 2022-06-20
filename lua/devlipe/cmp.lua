@@ -28,7 +28,7 @@ end
 -- TabNine Configuration to work with CMP
 tabnine:setup({
     max_lines = 1000,
-    max_num_results = 0,
+    max_num_results = 20,
     sort = true,
     run_on_every_keystroke = true,
     snippet_placeholder = '..',
@@ -108,9 +108,9 @@ cmp.setup {
         -- ["<Tab>"] = cmp.mapping.confirm {
         --     select = true
         -- },
-        ["<CR>"] = cmp.mapping.confirm {
-            select = true
-        },
+        -- ["<CR>"] = cmp.mapping.confirm {
+        --     select = true
+        -- },
         ["<Tab>"] = cmp.mapping(function(fallback)
             -- local copilot_keys = vim.fn['copilot#Accept']()
             if cmp.visible() then
