@@ -154,6 +154,11 @@ _G.packer_plugins = {
     path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/lspkind-nvim",
     url = "https://github.com/onsails/lspkind-nvim"
   },
+  ["lualine.nvim"] = {
+    loaded = true,
+    path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/lualine.nvim",
+    url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
   ["nlsp-settings.nvim"] = {
     loaded = true,
     path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
