@@ -63,6 +63,7 @@ return packer.startup(function(use)
     use "lunarvim/darkplus.nvim"
     use 'folke/tokyonight.nvim'
     use "catppuccin/nvim"
+    use 'gruvbox-community/gruvbox'
     -- cmp plugins
     use "hrsh7th/nvim-cmp" -- The completion plugin
     use "hrsh7th/cmp-buffer" -- buffer completions
@@ -79,7 +80,7 @@ return packer.startup(function(use)
     use "onsails/lspkind-nvim"
 
     -- GitHub Copilot
-    use 'github/copilot.vim'
+    -- use 'github/copilot.vim'
 
     -- snippets
     use "L3MON4D3/LuaSnip" -- snippet engine
