@@ -25,7 +25,6 @@ local diff = {
 }
 
 local mode = {
-<<<<<<< HEAD
     "mode",
     separator = { left = '' }, right_padding = 1,
     -- fmt = function(str)
@@ -36,20 +35,7 @@ local mode = {
 local filetype = {
     "filetype",
     icons_enabled = true,
-    -- icon = nil,
-=======
-	"mode",
-	separator = { left = '' }, right_padding = 2,
-	-- fmt = function(str)
-	--     return "-- " .. str .. " --"
-	-- end,
-}
-
-local filetype = {
-	"filetype",
-	icons_enabled =	true,
-	icon = nil,
->>>>>>> refs/remotes/origin/main
+    --icon = nil,
 }
 
 local branch = {
@@ -78,7 +64,6 @@ local spaces = function()
 end
 
 lualine.setup({
-<<<<<<< HEAD
     options = {
         icons_enabled = true,
         theme = "auto",
@@ -91,7 +76,7 @@ lualine.setup({
     sections = {
         lualine_a = { branch, diagnostics },
         lualine_b = { mode },
-        lualine_c = { "windows","tabs" },
+        lualine_c = { "windows" },
         -- lualine_x = { "encoding", "fileformat", "filetype" },
         lualine_x = { diff, spaces, "fileformat", filetype },
         lualine_y = { location },
@@ -107,34 +92,4 @@ lualine.setup({
     },
     tabline = {},
     extensions = {},
-=======
-	options = {
-		icons_enabled = true,
-		theme = "auto",
-		component_separators = '|',
-		-- component_separators = { left = "", right = "" },
-		section_separators = { left = "", right = "" },
-		disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" },
-		always_divide_middle = true,
-	},
-	sections = {
-		lualine_a = { branch, diagnostics },
-		lualine_b = { mode },
-		lualine_c = {  },
-		-- lualine_x = { "encoding", "fileformat", "filetype" },
-		lualine_x = { diff, spaces, filetype },
-		lualine_y = { location },
-		lualine_z = { "progress" },
-	},
-	inactive_sections = {
-		lualine_a = {},
-		lualine_b = {},
-		lualine_c = { "filename" },
-		lualine_x = { "location" },
-		lualine_y = {},
-		lualine_z = {},
-	},
-	tabline = {},
-	extensions = {},
->>>>>>> refs/remotes/origin/main
 })
