@@ -14,7 +14,7 @@ vim.g.tokyonight_lualine_bold= 1
 
 vim.cmd [[
 try
-  colorscheme tokyonight
+  colorscheme gruvbox-material 
 catch /^Vim\%((\a\+)\)\=:E185/
   colorscheme default
   set background=dark
