@@ -124,6 +124,11 @@ _G.packer_plugins = {
     path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/copilot.vim",
     url = "https://github.com/github/copilot.vim"
   },
+  edge = {
+    loaded = true,
+    path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/edge",
+    url = "https://github.com/sainnhe/edge"
+  },
   ["friendly-snippets"] = {
     loaded = true,
     path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/friendly-snippets",
@@ -134,10 +139,10 @@ _G.packer_plugins = {
     path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/gitsigns.nvim",
     url = "https://github.com/lewis6991/gitsigns.nvim"
   },
-  gruvbox = {
+  ["gruvbox-material"] = {
     loaded = true,
-    path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/gruvbox",
-    url = "https://github.com/gruvbox-community/gruvbox"
+    path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/gruvbox-material",
+    url = "https://github.com/sainnhe/gruvbox-material"
   },
   ["impatient.nvim"] = {
     loaded = true,
@@ -163,11 +168,6 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/nlsp-settings.nvim",
     url = "https://github.com/tamago324/nlsp-settings.nvim"
-  },
-  ["null-ls.nvim"] = {
-    loaded = true,
-    path = "/home/lipeferreira/.local/share/nvim/site/pack/packer/start/null-ls.nvim",
-    url = "https://github.com/jose-elias-alvarez/null-ls.nvim"
   },
   ["nvim-autopairs"] = {
     loaded = true,
