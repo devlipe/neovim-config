@@ -75,12 +75,12 @@ tabnine:setup({
 -- find more here: https://www.nerdfonts.com/cheat-sheet
 
 local source_mapping = {
-    buffer = "[Buffer]",
     nvim_lsp = "[LSP]",
+    buffer = "[Buffer]",
     -- nvim_lua = "[Lua]",
-    cmp_tabnine = "[TN]",
     path = "[Path]",
-    luasnip = "[Snippet]"
+    luasnip = "[Snippet]",
+    cmp_tabnine = "[TN]",
 
 }
 

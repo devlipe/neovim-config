@@ -72,12 +72,12 @@ return packer.startup(function(use)
     use "saadparwaiz1/cmp_luasnip" -- snippet completions
     use "hrsh7th/cmp-nvim-lsp" -- snippet from lsp
     -- Tabnine AI
-    use {
-        'tzachar/cmp-tabnine',
-        run = './install.sh',
-        requires = 'hrsh7th/nvim-cmp'
-    }
-    use "onsails/lspkind-nvim"
+     use {
+         'tzachar/cmp-tabnine',
+         run = './install.sh',
+         requires = 'hrsh7th/nvim-cmp'
+     }
+     use "onsails/lspkind-nvim"
 
     -- GitHub Copilot
     use 'github/copilot.vim'
