@@ -6,4 +6,4 @@ end
 
 require "devlipe.lsp.configs"
 require("devlipe.lsp.handlers").setup()
--- require "devlipe.lsp.null-ls"
+require "devlipe.lsp.null-ls"

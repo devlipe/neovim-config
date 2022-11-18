@@ -159,13 +159,16 @@ cmp.setup {
             name = "nvim_lsp"
         }, {
             name = "luasnip"
-        }, {
-            name = 'cmp_tabnine'
-        }, {
+        },
+        --[[ { ]]
+        --[[     name = 'cmp_tabnine' ]]
+        --[[ }, ]]
+        {
             name = "buffer"
         }, {
             name = "path"
-        } },
+        }
+    },
     confirm_opts = {
         behavior = cmp.ConfirmBehavior.Replace,
         select = false
