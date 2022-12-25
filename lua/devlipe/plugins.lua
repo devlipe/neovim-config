@@ -4,7 +4,7 @@ local fn = vim.fn
 local install_path = fn.stdpath "data" .. "/site/pack/packer/start/packer.nvim"
 if fn.empty(fn.glob(install_path)) > 0 then
     PACKER_BOOTSTRAP = fn.system { "git", "clone", "--depth", "1", "https://github.com/wbthomason/packer.nvim",
-         install_path }
+        install_path }
     print "Installing packer close and reopen Neovim..."
     vim.cmd [[packadd packer.nvim]]
 end
@@ -47,7 +47,7 @@ return packer.startup(function(use)
 
     use "kyazdani42/nvim-web-devicons"
     use "kyazdani42/nvim-tree.lua"
-    -- use "akinsho/bufferline.nvim"
+    --[[ use "akinsho/bufferline.nvim" ]]
     use "moll/vim-bbye"
     use "nvim-lualine/lualine.nvim"
     use "akinsho/toggleterm.nvim"
@@ -59,9 +59,7 @@ return packer.startup(function(use)
     use "folke/which-key.nvim"
 
     -- Colorschemes
-    -- use "lunarvim/colorschemes" -- A bunch of colorschemes you can try out
-    use "sainnhe/gruvbox-material"
-    use "joshdick/onedark.vim"
+    use 'navarasu/onedark.nvim'
     use 'folke/tokyonight.nvim'
     use "sainnhe/edge"
     -- cmp plugins
@@ -90,10 +88,13 @@ return packer.startup(function(use)
     use "neovim/nvim-lspconfig" -- enable LSP
     use "williamboman/nvim-lsp-installer" -- simple to use language server installer
     use "tamago324/nlsp-settings.nvim" -- language server settings defined in json for
-    -- use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
+    use "jose-elias-alvarez/null-ls.nvim" -- for formatters and linters
 
     -- Telescope
-    use "nvim-telescope/telescope.nvim"
+    use {
+        'nvim-telescope/telescope.nvim', tag = '0.1.0',
+        requires = { { 'nvim-lua/plenary.nvim' } }
+    }
 
     -- Treesitter
     use {

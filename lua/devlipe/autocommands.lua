@@ -29,6 +29,13 @@ vim.cmd [[
     autocmd!
     autocmd User AlphaReady set showtabline=0 | autocmd BufUnload <buffer> set showtabline=2
   augroup end
+  
+ augroup _auto_format
+   autocmd!
+   autocmd BufWritePre * lua vim.lsp.buf.formatting_sync()
+ augroup end
+
+
 ]]
 
 -- Autoformat
@@ -41,4 +48,3 @@ vim.cmd [[
 --     autocmd!
 --     autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank({timeout = 40})
 --   augroup END
-  

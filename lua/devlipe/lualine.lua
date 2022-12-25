@@ -1,27 +1,27 @@
 local status_ok, lualine = pcall(require, "lualine")
 if not status_ok then
-	return
+    return
 end
 
 local hide_in_width = function()
-	return vim.fn.winwidth(0) > 80
+    return vim.fn.winwidth(0) > 80
 end
 
 local diagnostics = {
-	"diagnostics",
-	sources = { "nvim_diagnostic" },
-	sections = { "error", "warn" },
-  symbols = { error = " ", warn = "𥉉" },
-	colored = false,
-	update_in_insert = false,
-	always_visible = true,
+    "diagnostics",
+    sources = { "nvim_diagnostic" },
+    sections = { "error", "warn" },
+    symbols = { error = " ", warn = "𥉉" },
+    colored = false,
+    update_in_insert = false,
+    always_visible = true,
 }
 
 local diff = {
-	"diff",
-	colored = false,
-	symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
-	cond = hide_in_width
+    "diff",
+    colored = false,
+    symbols = { added = " ", modified = " ", removed = " " }, -- changes diff symbols
+    cond = hide_in_width
 }
 
 local mode = {
@@ -39,14 +39,14 @@ local filetype = {
 }
 
 local branch = {
-	"branch",
-	icons_enabled = true,
-	icon = "",
+    "branch",
+    icons_enabled = true,
+    icon = "",
 }
 
 local location = {
-	"location",
-	padding = 1,
+    "location",
+    padding = 1,
 }
 
 -- -- cool function for prress
@@ -60,7 +60,7 @@ local location = {
 -- end
 
 local spaces = function()
-	return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
+    return "spaces: " .. vim.api.nvim_buf_get_option(0, "shiftwidth")
 end
 
 lualine.setup({
@@ -70,7 +70,7 @@ lualine.setup({
         component_separators = '|',
         -- component_separators = { left = "", right = "" },
         section_separators = { left = "", right = "" },
-        disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline" , "toggleterm"},
+        disabled_filetypes = { "alpha", "dashboard", "NvimTree", "Outline", "toggleterm" },
         always_divide_middle = true,
     },
     sections = {
