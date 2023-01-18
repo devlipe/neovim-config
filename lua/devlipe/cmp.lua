@@ -112,32 +112,23 @@ cmp.setup {
             select = true
         },
         ["<Tab>"] = cmp.mapping(function(fallback)
-            -- local copilot_keys = vim.fn['copilot#Accept']()
             if cmp.visible() then
-                cmp.confirm({
-                    select = true
-                })
-            elseif luasnip.expandable() then
-                luasnip.expand()
+                cmp.select_next_item()
             elseif luasnip.expand_or_jumpable() then
                 luasnip.expand_or_jump()
-                -- elseif copilot_keys ~= '' and type(copilot_keys) == 'string' then
-                --     vim.api.nvim_feedkeys(copilot_keys, 'i', true)
-            elseif check_backspace() then
-                fallback()
             else
                 fallback()
             end
-        end, { "i", "s" })
-        -- ["<S-Tab>"] = cmp.mapping(function(fallback)
-        --     if cmp.visible() then
-        --         cmp.select_prev_item()
-        --     elseif luasnip.jumpable(-1) then
-        --         luasnip.jump(-1)
-        --     else
-        --         fallback()
-        --     end
-        -- end, {"i", "s"})
+        end, { "i", "s" }),
+        ["<S-Tab>"] = cmp.mapping(function(fallback)
+            if cmp.visible() then
+                cmp.select_prev_item()
+            elseif luasnip.jumpable(-1) then
+                luasnip.jump(-1)
+            else
+                fallback()
+            end
+        end, { "i", "s" }),
     },
     formatting = {
         fields = { "kind", "abbr", "menu" },
